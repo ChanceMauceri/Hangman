@@ -165,10 +165,13 @@ def letterin():
     letter = input('Enter one letter only: ')
     if len(letter) > 1 :
         return 'One letter only please'
-    elif letter in pickedletters: # Checking if letter in picked letters
+    elif letter in pickedletters: # Testing
         return 'Please choose a new letter '
-
+    
     pickedletters.append(letter) # Trying to store previous selections
+    
+    #elif letter in pickedletters: # Checking if letter in picked letters
+    #    return 'Please choose a new letter '
 
     pick = letter
 
@@ -230,4 +233,6 @@ if __name__ == '__main__':
     if strr == hiddenword:
         print('You have found the right word! ')
     elif life == 0:
+        os.system('cls')
+        drawman(life)
         print(f'You Lose, the correct word was {hiddenword}')
